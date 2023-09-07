@@ -26,8 +26,12 @@ Route::get('/test-database', function () {
     }
 });
 
-Route::get('/', function () {
+Route::get('CV', function () {
     return view('cv');
+});
+
+Route::get('profile', function () {
+    return view('profile_pplg');
 });
 
 use App\Http\Controllers\TestKoneksiController;

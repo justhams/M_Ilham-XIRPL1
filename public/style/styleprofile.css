@@ -1,0 +1,360 @@
+/* Reset some default browser styles */
+@font-face {
+  font-family: 'Qwenzy';
+  src: url('/fonts/qwenzy.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Qwenzy', sans-serif;
+}
+
+  
+body, ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  /* Global styles */
+  
+  /* Header styles */
+  .header {
+    background-color:#e8e4cc; /* Warna latar belakang header - #132226 */
+    padding: 10px;
+  }
+
+  .welcome-text {
+    margin-left: 100px;
+  }
+  
+  /* Logo and Navigation styles */
+  .logo {
+    float: left;
+    padding: 20px;
+  }
+
+  .profile-img {
+    position: absolute; /* Membuat gambar profil posisi absolut */
+    top: 10px; /* Menentukan jarak dari atas (sesuaikan sesuai kebutuhan) */
+    left: 10px; /* Menentukan jarak dari kiri (sesuaikan sesuai kebutuhan) */
+    width: 80px; /* Menentukan lebar gambar profil (sesuaikan sesuai kebutuhan) */
+    height: auto; /* Menjaga aspek rasio gambar */
+    z-index: 1; /* Menentukan tumpukan z-index di atas header */
+  }
+    
+  .navigation {
+  float: right;
+  padding: 10px;
+  }
+ 
+
+.navigation li {
+  display: inline;
+  margin-left: 10px;
+}
+
+.navigation ul li {
+  list-style: none;
+}
+
+
+.navigation ul li a {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  margin: 20px 0;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #d0b893;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.navigation ul li a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 2px solid #d0b893;
+  border-bottom: 2px solid #d0b893;
+  transform: scaleY(2);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.navigation ul li a:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #d0b893;
+  transform: scale(0);
+  opacity: 0;
+  transition: 0.3s;
+  z-index: -1;
+}
+
+.navigation ul li a:hover {
+  color: #fff;
+}
+
+.navigation ul li a:hover:before {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.navigation ul li a:hover:after {
+  transform: scaleY(1);
+  opacity: 1;
+}
+  
+  .navigation a {
+    text-decoration: none;
+    color: #525B56; /* Warna teks tautan navigasi - #525B56 */
+  }
+  
+  /* Text area styles */
+  .text-area h2{
+    font-weight: bolder;
+  }
+
+  .text-area {
+    background-color: rgb(228, 209, 132); /* Warna latar belakang text area - #040C0E */
+    padding: 20px;
+    color: #b98729; /* Warna teks text area - #A4978E */
+  }
+  
+  /* Boxes styles */
+  .boxes {
+    background-color: #d1a67b; /* Warna latar belakang boxes - #BE9063 */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .boxes img {
+    --s: 15px;  /* size of the frame */
+    --b: 2px;   /* border thickness */
+    --w: 200px; /* width of the image */
+    --c: #7B3B3B;
+    width: 70%;
+    object-fit: contain;
+    padding-bottom: 25px;width: var(--w);
+    aspect-ratio: 1;
+    object-fit: cover;
+    padding: calc(2*var(--s));
+    --_g: var(--c) var(--b),#0000 0 calc(100% - var(--b)),var(--c) 0;
+    background:
+      linear-gradient(      var(--_g)) 50%/100% var(--_i,100%) no-repeat,
+      linear-gradient(90deg,var(--_g)) 50%/var(--_i,100%) 100% no-repeat;
+    outline: calc(var(--w)/2) solid #0009;
+    outline-offset: calc(var(--w)/-2 - 2*var(--s));
+    transition: .4s;
+    cursor: pointer;
+  }
+
+  .boxes img:hover {
+    outline: var(--b) solid var(--c);
+    outline-offset: calc(var(--s)/-2);
+    --_i: calc(100% - 2*var(--s));
+  }
+  
+  .box {
+    width: 30%;
+    height: 400px; /* Tambahkan tinggi yang sesuai */
+    background-color: #EAE8DC;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Untuk mengatur konten di tengah secara horizontal */
+    text-align: center;
+  }
+  
+  .box h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  
+
+  
+  /* CSS untuk footer */
+  footer {
+    background-color: #132226; /* Warna latar belakang footer - #132226 */
+    color: #A4978E; /* Warna teks pada footer - #A4978E */
+    padding: 10px 0; /* Ruang polos di atas dan bawah footer */
+    text-align: center; /* Teks di tengah footer */
+    position: relative; /* Membuat footer tetap di bagian bawah */
+    bottom: 0; /* Meletakkan footer di bagian bawah */
+    width: 100%; /* Lebar footer mengisi seluruh lebar halaman */
+  }
+  
+  /* CSS untuk link pada footer */
+  footer a {
+    color: #A4978E; /* Warna teks tautan pada footer - #A4978E */
+    text-decoration: none; /* Hapus dekorasi tautan (misalnya, garis bawah) */
+  }
+  
+  /* CSS untuk link tautan hover pada footer */
+  footer a:hover {
+    text-decoration: underline; /* Tambahkan garis bawah saat tautan hover */
+  }
+  
+
+  /* CSS untuk teks "Home" saat hover */
+.nav-link {
+  position: relative; /* Membuat posisi relatif untuk menempatkan teks */
+  display: inline-block; /* Menampilkan teks di sebelah logo */
+  margin-top: 5px; /* Jarak antara logo dan teks saat hover */
+}
+
+.nav-link::after {
+  content: "Home"; /* Teks yang akan muncul saat hover */
+  display: block; /* Membuat teks muncul dalam baris baru */
+  opacity: 0; /* Teks awalnya tidak terlihat */
+  position: absolute; /* Membuat posisi absolut untuk menempatkan teks */
+  bottom: -20px; /* Menentukan jarak vertikal teks dari logo saat hover */
+  left: 50%; /* Pusatkan teks secara horizontal */
+  transform: translateX(-50%); /* Pusatkan teks secara horizontal */
+  background-color: #fff; /* Warna latar belakang teks saat hover */
+  padding: 5px 10px; /* Ruang dalam teks saat hover */
+  border-radius: 5px; /* Membuat sudut lekukan pada teks saat hover */
+  transition: opacity 0.2s ease-in-out; /* Efek transisi opacity saat hover */
+}
+
+.nav-link:hover::after {
+  opacity: 1; /* Teks muncul saat hover */
+}
+
+.banner{
+  padding: 50px;
+}
+
+.banner h1{
+  text-align: center;
+  color: #E88073;
+}
+
+/* Panels. */
+.splitview {
+  position: relative;
+  width: 100%;
+  min-height: 45vw;
+  overflow: hidden;
+}
+
+.panel {
+  position: absolute;
+  width: 100vw;
+  min-height: 45vw;
+  overflow: hidden;
+}
+
+  .panel .content {
+      position: absolute;
+      width: 100vw;
+      min-height: 45vw;
+      color: #FFF;
+  }
+
+  .panel .description {
+      width: 25%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+  }
+
+  .panel img {
+      box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.15);
+      width: 35%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+
+
+.bottom {
+  background-color: rgb(120, 103, 56);
+  z-index: 1;
+}
+
+  .bottom .description {
+      right: 5%;
+  }
+
+.top {
+  background-color: rgb(228, 209, 132);
+  z-index: 2;
+  width: 50vw;
+
+  /*-webkit-clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);*/
+}
+
+  .top .description {
+      left: 5%;
+  }
+
+/* Handle. */
+.handle {
+  height: 100%;
+  position: absolute;
+  display: block;
+  background-color: rgb(253, 171, 0);
+  width: 5px;
+  top: 0;
+  left: 50%;
+  z-index: 3;
+}
+
+/* Skewed. */
+.skewed .handle {
+  top: 50%;
+  transform: rotate(30deg) translateY(-50%);
+  height: 200%;
+  -webkit-transform-origin: top;
+  -moz-transform-origin: top;
+  transform-origin: top;
+}
+
+.skewed .top {
+  transform: skew(-30deg);
+  margin-left: -1000px;
+  width: calc(50vw + 1000px);
+}
+
+.skewed .top .content {
+  transform: skew(30deg);
+  margin-left: 1000px;
+}
+
+/* Responsive. */
+@media (max-width: 900px) {
+  body {
+      font-size: 75%;
+  }
+}
+
+.header {
+  color: #BE9063;
+}
+
+
+
+  
+
+
+
+
+
+
