@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My PHP Website</title>
+  <title>PROFILE</title>
   <link rel="stylesheet" type="text/css" href="style/styleprofile.css">
 </head>
 <body>
@@ -20,11 +20,15 @@
   <div class="header">
     <h1 class="welcome-text">PPLG 1</h1>
   </div>
+  <div class="banner">
+    <h1>WELCOME</h1>
+  </div>
+  </div>
     <div class="splitview skewed">
       <div class="panel bottom">
           <div class="content">
               <div class="description">
-                  <h1>WHEN IM ALONE</h1>
+                  <h1>WHEN IM ALONE</h1>  
               </div>
 
               <img src="image/jalan.jpg" alt="Original">

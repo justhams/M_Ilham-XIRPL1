@@ -1,104 +1,126 @@
-/* Reset some default styles */
-body, h1, h2, h3, h4, p, ul, li {
+
+*{
     margin: 0;
     padding: 0;
 }
 
-/* Global styles */
-body {
-    display: flex;
-    font-family: Arial, sans-serif;
-    background-color: #212121;
-    color: #ffffff;
-}
 
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-}
-
-/* Sidebar styles */
 .sidebar {
-    width: 0;
-    background-color: #212121;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    transition: width 0.5s;
+    width: 250px; /* Lebar sidebar */
+    height: 100%; /* Mengisi tinggi layar penuh */
+    position: fixed; /* Sidebar tetap di tempat saat digulir */
+    top: 0; /* Sidebar dimulai dari bagian atas */
+    left: 0; /* Sidebar dimulai dari sisi kiri */
+    background-color: #e8e4cc; /* Warna latar belakang sidebar */
+    padding-top: 20px; /* Jarak dari atas */
+    z-index: 1; /* Mengontrol lapisan tampilan */
 }
 
-.sidebar.open {
-    width: 25%;
-}
-
-.sidebar h3 {
-    color: #fff;
-    margin-bottom: 10px;
-}
-
-.sidebar img {
-    max-width: 100%;
-    height: auto;
-}
-
-.sidebar p {
-    margin-bottom: 10px;
-}
-
-/* Content styles */
+/* CSS for the content section */
 .content {
-    width: 100%; /* Set the content width to take up the remaining space */
-    padding: 20px;
-    box-sizing: border-box;
-    transition: width 0.5s;
+    margin-left: 270px; /* Menggeser konten utama ke kanan untuk memberikan ruang bagi sidebar */
+    padding: 20px; /* Ruang di sekitar konten utama */
+    z-index: 0; /* Mengontrol lapisan tampilan */
 }
 
-.content.open {
-    width: 75%; /* Adjust the content width when the sidebar is open */
+/* Style the profile section */
+.profilebox {
+    position: relative;
+    z-index: 2; /* Mengontrol lapisan tampilan, harus lebih tinggi daripada sidebar */
 }
 
-.content h3 {
-    color: #fff;
-    margin-bottom: 10px;
+.profile {
+    padding-left: 20px;
+    text-align: left;
 }
 
-.content h4 {
-    color: #aaa;
-    margin-bottom: 10px;
+.profile img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }
 
-.content p {
-    margin-bottom: 10px;
+
+/* Style the sections (experience, education, skills) */
+.experience, .education, .skills {
+    margin-bottom: 30px;
 }
 
-/* Skills list styles */
+/* Style the section headings */
+.experience h3, .education h3, .skills h3 {
+    background-color: #fffae0;
+    color: #f5e379;
+    padding: 10px;
+}
+
+/* Style the job/education titles */
+.experience h4, .education h4 {
+    margin-top: 10px;
+}
+
+/* Style the list items in the skills section */
 .skills ul {
-    list-style-type: square;
-    color: #aaa;
-    margin-left: 20px;
+    list-style: none;
+    padding-left: 0;
 }
 
-/* Experience and education section styles */
-.experience, .education {
-    border-bottom: 1px solid #666;
-    padding-bottom: 20px;
+.skills li {
+    margin-bottom: 10px;
+}
+
+/* Add some animation to the header */
+header {
+    animation: fadeIn 1s ease-in-out;
+}
+.boxes {
+        
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 20px;
-}
+  }
 
-/* Image styles */
-img {
-    max-width: 100%;
-    height: auto;
-}
+  .boxes img {
+    --s: 15px;  /* size of the frame */
+    --b: 2px;   /* border thickness */
+    --w: 200px; /* width of the image */
+    --c: #efe27b;
+    width: 70%;
+    object-fit: contain;
+    padding-bottom: 25px;width: var(--w);
+    aspect-ratio: 1;
+    object-fit: cover;
+    padding: calc(2*var(--s));
+    --_g: var(--c) var(--b),#0000 0 calc(100% - var(--b)),var(--c) 0;
+    background:
+      linear-gradient(      var(--_g)) 50%/100% var(--_i,100%) no-repeat,
+      linear-gradient(90deg,var(--_g)) 50%/var(--_i,100%) 100% no-repeat;
+    outline: calc(var(--w)/2) solid #0009;
+    outline-offset: calc(var(--w)/-2 - 2*var(--s));
+    transition: .4s;
+    cursor: pointer;
+  }
 
-/* Add any other styles you want here */
-
-.center {
-    margin-top: 250px;
-}
-
-button {
-    background-color: #666;
-}
+  .boxes img:hover {
+    outline: var(--b) solid var(--c);
+    outline-offset: calc(var(--s)/-2);
+    --_i: calc(100% - 2*var(--s));
+  }
+  
+  .box {
+    width: 30%;
+    height: 400px; /* Tambahkan tinggi yang sesuai */
+    background-color: #EAE8DC;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Untuk mengatur konten di tengah secara horizontal */
+    text-align: center;
+  }
+  
+  .box h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
