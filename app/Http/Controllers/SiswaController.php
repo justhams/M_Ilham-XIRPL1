@@ -30,7 +30,7 @@ class SiswaController extends Controller
         'nis' => 'required|max:25',
         'nama' => 'required|max:50',
         'tempat_lahir' => 'required|max:50',
-        'tgl_lahir' => 'required|date',
+        'tgl_lahir' => 'required|date|before_or_equal:now',
         'alamat' => 'required|max:50',
         'email' => 'required|email|max:30',
         'no_telepon' => 'required|max:20',
@@ -50,10 +50,10 @@ class SiswaController extends Controller
     public function update(Siswa $siswa, Request $request){ 
         
         $data = $request->validate([
-            'nis' => 'required|max:25',
+            'nis' => 'required|max:25|unique:siswa,nis,',
             'nama' => 'required|max:50',
             'tempat_lahir' => 'required|max:50',
-            'tgl_lahir' => 'required|date',
+            'tgl_lahir' => 'required|date|before_or_equal:now',
             'alamat' => 'required|max:50',
             'email' => 'required|email|max:30',
             'no_telepon' => 'required|max:20',
