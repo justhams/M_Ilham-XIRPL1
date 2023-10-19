@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Http\Controllers\SiswaController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +29,7 @@ Route::get('/test-database', function () {
     }
 });
 
-Route::get('CV', function () {
-    return view('cv');
-});
+Route::get('/CV', [SiswaController::class, 'index']);
 
 Route::get('profile', function () {
     return view('profile_pplg');
@@ -37,4 +38,11 @@ Route::get('profile', function () {
 use App\Http\Controllers\TestKoneksiController;
 
 Route::get('/test-databases', [TestKoneksiController::class, 'testDatabase']);
+
+Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.siswa');   
+Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');   
+Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store'); 
+Route::get('/siswa/{siswa}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
+Route::put('/siswa/{siswa}/update', [SiswaController::class, 'update'])->name('siswa.update'); 
+Route::delete('/siswa/{siswa}/destroy', [SiswaController::class, 'destroy'])->name('siswa.destroy'); 
 
