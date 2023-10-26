@@ -29,7 +29,13 @@ Route::get('/test-database', function () {
     }
 });
 
-Route::get('/CV', [SiswaController::class, 'index']);
+Route::get('/cv', function () {
+    return view ('cv');
+});
+
+
+
+Route::get('/profile', [SiswaController::class,'profile_pplg']);
 
 Route::get('profile', function () {
     return view('profile_pplg');
@@ -44,5 +50,10 @@ Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.cre
 Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store'); 
 Route::get('/siswa/{siswa}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
 Route::put('/siswa/{siswa}/update', [SiswaController::class, 'update'])->name('siswa.update'); 
-Route::delete('/siswa/{siswa}/destroy', [SiswaController::class, 'destroy'])->name('siswa.destroy'); 
+Route::get('/siswa/{siswa}/destroy', [SiswaController::class, 'destroy'])->name('siswa.destroy'); 
+Route::get('/siswa/{siswa}/show/', [SiswaController::class,'show'])->name('siswa.show');
+
+
+
+
 

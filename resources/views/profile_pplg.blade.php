@@ -12,8 +12,8 @@
     <ul>
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
-      <li><a href="CV">Portofolio</a></li>
-      <li><a href="#">Content</a></li>
+      <li><a href="cv">Portofolio</a></li>
+      <li><a href="siswa">Content</a></li>
     </ul>
   </div>
   <div class="wrapper">

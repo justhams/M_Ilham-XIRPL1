@@ -65,10 +65,16 @@ class SiswaController extends Controller
         return redirect()->route('siswa.siswa')->with('success', 'Siswa Updated Successfully');
     }
     
-    public function destroy(Siswa $siswa){
-        $siswa->delete();
-        return redirect()->route('siswa.siswa')->with('success', 'siswa deleted Successfully!');
-        
-        
+    public function destroy(Siswa $siswa)
+{
+    $siswa->delete();
+    return redirect()->route('siswa.siswa')->with('success', 'Siswa deleted successfully!');
 }
+
+    public function show(Siswa $siswa)
+{
+    // Assuming "Siswa" is your model name and you have a "show" view to display student details
+    return view('siswa.show', ['siswa' => $siswa]);
+}
+
 }

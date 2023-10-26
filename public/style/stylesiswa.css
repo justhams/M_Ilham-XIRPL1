@@ -1,0 +1,141 @@
+@font-face {
+    font-family: 'Qwenzy';
+    src: url('/fonts/qwenzy.ttf') format('truetype');
+  }
+  
+  body {
+    font-family: 'Qwenzy', sans-serif;
+  }
+  
+    
+  body, ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    
+    /* Global styles */
+    
+    /* Header styles */
+    .header {
+      background-color:#e8e4cc; /* Warna latar belakang header - #132226 */
+      padding: 10px;
+      height: 100px;
+    }
+  
+    .welcome-text {
+      margin-left: 100px;
+    }
+    
+    /* Logo and Navigation styles */
+    .logo {
+      float: left;
+      padding: 20px;
+    }
+  
+    .profile-img {
+      position: absolute; /* Membuat gambar profil posisi absolut */
+      top: 10px; /* Menentukan jarak dari atas (sesuaikan sesuai kebutuhan) */
+      left: 10px; /* Menentukan jarak dari kiri (sesuaikan sesuai kebutuhan) */
+      width: 80px; /* Menentukan lebar gambar profil (sesuaikan sesuai kebutuhan) */
+      height: auto; /* Menjaga aspek rasio gambar */
+      z-index: 1; /* Menentukan tumpukan z-index di atas header */
+    }
+      
+    .navigation {
+    float: right;
+    padding: 10px;
+    }
+   
+  
+  .navigation li {
+    display: inline;
+    margin-left: 10px;
+  }
+  
+  .navigation ul li {
+    list-style: none;
+  }
+  
+  
+  .navigation ul li a {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    margin: 20px 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #d0b893;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.5s;
+    z-index: 1;
+  }
+  
+  .navigation ul li a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid #d0b893;
+    border-bottom: 2px solid #d0b893;
+    transform: scaleY(2);
+    opacity: 0;
+    transition: 0.3s;
+  }
+  
+  .navigation ul li a:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #d0b893;
+    transform: scale(0);
+    opacity: 0;
+    transition: 0.3s;
+    z-index: -1;
+  }
+  
+  .navigation ul li a:hover {
+    color: #fff;
+  }
+  
+  .navigation ul li a:hover:before {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  
+  .navigation ul li a:hover:after {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+    
+    .navigation a {
+      text-decoration: none;
+      color: #525B56; /* Warna teks tautan navigasi - #525B56 */
+    }
+  
+    .wrapper {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .banner {
+      padding: 0;
+      margin: 0;
+      height: 240px;
+      width: 100%;
+      background-image: url('/image/badag.png');
+      display: flex; /* Menggunakan flex container */
+      justify-content: center; /* Untuk membuat teks menjadi rata tengah secara horizontal */
+      align-items: center; /* Untuk membuat teks menjadi rata tengah secara vertikal */
+  }
+  
+  .banner h1 {
+      margin: 0;
+      color: #e1d9c9;
+  }
