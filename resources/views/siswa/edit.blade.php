@@ -59,12 +59,15 @@
 <body>
     <div class="container">
         <h1 class="mt-4">EDIT</h1>
-        <form method="POST" action="{{ route('siswa.update', ['siswa' => $siswa]) }}">
+        <form id="insertForm" method="POST" action="{{ route('siswa.update', ['siswa' => $siswa]) }}">
             @csrf
             @method('put')
             @include('sweetalert::alert')
             <div class="form-group">
                 <label for="nis">NIS:</label>
+                @error('nis')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                 <input type="text" name="nis" id="nis" class="form-control" value="{{$siswa->nis}}">
             </div>
         
@@ -106,7 +109,7 @@
                 </select>
             </div>
         
-            <button type="submit" class="btn btn-primary">Simpan</button>
+            <button type="submit" class="btn btn-primary submit">Simpan</button>
         </form>
     </div>
 
@@ -114,5 +117,29 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+
+        <script>
+                    document.querySelector(".submit").addEventListener("click", function (event) {
+                        event.preventDefault(); // Menghentikan pengiriman formulir otomatis
+
+                        swal({
+                            title: "Apakah kamu yakin?",
+                            text: "Kamu akan menyimpan perubahan data siswa",
+                            icon: "warning",
+                            buttons: true,
+                            dangerMode: true,
+                        }).then((willSave) => {
+                            if (willSave) {
+                                // Mengirimkan formulir setelah pengguna mengonfirmasi
+                                document.getElementById("insertForm").submit();
+                            } else {
+                                swal("Perubahan tidak disimpan");
+                            }
+                        });
+                    });
+
+        </script>
 </body>
 </html>
